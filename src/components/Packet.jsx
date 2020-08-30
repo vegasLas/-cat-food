@@ -1,8 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
-
-
-
 const Packet = (props) => {
     let { packet, selectPacket, unSelectPacket } = props
     return (
