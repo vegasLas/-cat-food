@@ -97,7 +97,7 @@ const plugins = () => {
 module.exports = {
     mode: 'development',
     entry: {
-        main: ['@babel/polyfill', './src/index.js'],
+        main: ['babel-polyfill', './src/index.js'],
     },
     output: {
         filename: filename('js'),

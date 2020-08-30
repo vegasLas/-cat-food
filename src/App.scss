@@ -401,11 +401,21 @@
             font-size: 12px;
         }
 
+        padding-right: 10px;
+        padding-left: 10px;
     }
 
 
 }
 
+.select {
+    // transform: translate3D(0px, -20px, -10px);
+    transform: rotate3D(0, -0.1, -0.1, -10deg);
+
+    @media (max-width: 550px) {
+        transform: rotate3D(0, -0.1, -0.08, -3deg);
+    }
+}
 
 
 .fish {
@@ -432,10 +442,11 @@
         }
 
         &__undertext {
-            a {
+            button {
+                background-color: rgba(#000000, 0);
                 position: relative;
                 color: #1698d9;
-
+                transform: rotate3D(0, 0, 0, 0);
                 &::after {
                     content: '';
                     position: absolute;
@@ -513,10 +524,7 @@
 
 
 
-.select {
-    // transform: translate3D(0px, -20px, -10px);
-    transform: rotate3D(0, -0.1, -0.1, -10deg);
-}
+
 
 .empty {
     .column {

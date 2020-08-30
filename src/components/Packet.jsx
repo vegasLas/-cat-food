@@ -7,7 +7,7 @@ const Packet = (props) => {
                 ? 'app__column column fish' : (packet.name === 'chiken')
                     ? 'app__column column chiken empty' : null
         }>
-            <button disabled={(packet.name === 'chiken') ? true : false} href="#" onClick={packet.toggle ? () => { unSelectPacket(packet.id) } : () => { selectPacket(packet.id) }} className={packet.toggle ? 'column__screen select' : "column__screen"}>
+            <button disabled={(packet.name === 'chiken') ? true : false} onClick={packet.toggle ? () => { unSelectPacket(packet.id) } : () => { selectPacket(packet.id) }} className={packet.toggle ? 'column__screen select' : "column__screen"}>
                 <div className='column__body'>
                     <p className='column__forehead'>
                         Сказочное заморское яство
@@ -34,7 +34,7 @@ const Packet = (props) => {
                 </div>
             </button>
             <div className="column__undertext">
-                {packet.signature} <a href="">{packet.link}</a>
+                {packet.signature} <button onClick={packet.toggle ? () => { unSelectPacket(packet.id) } : () => { selectPacket(packet.id) }} className={packet.toggle ? ' select' : null} >{packet.link}</button>
             </div>
         </div>
 
