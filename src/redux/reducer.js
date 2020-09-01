@@ -28,7 +28,7 @@ let initialState = {
             signature: `Чего сидидшь? порадуй котэ`,
             link: 'купи.',
             undertext: 'Печень утки разварная с артишоками.',
-            isPresence: true,
+            isPresence: false,
             onMouseOut: false
 
         },
@@ -44,7 +44,7 @@ let initialState = {
             signature: `Чего сидидшь? порадуй котэ`,
             link: 'купи.',
             undertext: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
-            isPresence: true,
+            isPresence: false,
             onMouseOut: false
         },
         {
@@ -80,7 +80,6 @@ const packetsReducer = (state = initialState, action) => {
                 packets: updateObjectInArray(state.packets, action.packId, 'id', { toggle: false })
             }
         case TOGGLE_MOUSEOVER: {
-            debugger
             return {
                 ...state,
                 packets: updateObjectInArray(state.packets, action.packId, 'id', { onMouseOut: true })
