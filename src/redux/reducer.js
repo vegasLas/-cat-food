@@ -1,7 +1,9 @@
 
-export const TOGGLE_SELECT = 'TOGGLE_SELECT'
-export const TOGGLE_UNSELECT = 'TOGGLE_UNSELECT'
-export const updateObjectInArray = (packets, packId, objPropName, toggle) => {
+const TOGGLE_SELECT = 'TOGGLE_SELECT'
+const TOGGLE_UNSELECT = 'TOGGLE_UNSELECT'
+const TOGGLE_MOUSEOUT = 'TOGGLE_MOUSEOUT'
+const TOGGLE_MOUSEOVER = 'TOGGLE_MOUSEOVER'
+const updateObjectInArray = (packets, packId, objPropName, toggle) => {
     return packets.map((u) => {
         if (u[objPropName] === packId) {
             return { ...u, ...toggle }
@@ -11,8 +13,25 @@ export const updateObjectInArray = (packets, packId, objPropName, toggle) => {
     )
 }
 
+
 let initialState = {
     packets: [
+        {
+            id: 1,
+            name: 'fuagra',
+            customer: '',
+            filling: 'с фуа-гра',
+            portion: '10 порций',
+            prize: 'мышь в подарок',
+            weight: '0.5',
+            toggle: false,
+            signature: `Чего сидидшь? порадуй котэ`,
+            link: 'купи.',
+            undertext: 'Печень утки разварная с артишоками.',
+            isPresence: false,
+            onMouseOut: false
+
+        },
         {
             id: 0,
             name: 'fish',
@@ -23,31 +42,27 @@ let initialState = {
             weight: '2',
             toggle: false,
             signature: `Чего сидидшь? порадуй котэ`,
-            link: 'купи.'
-        },
-        {
-            id: 1,
-            name: 'fuagra',
-            customer: '',
-            filling: 'с фуагра',
-            portion: '10 порций',
-            prize: 'мышь в подарок',
-            weight: '0.5',
-            toggle: false,
-            signature: `Головы щучьи с чесноком да свежайшая сёмгушка.`,
-            link: ''
+            link: 'купи.',
+            undertext: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
+            isPresence: false,
+            onMouseOut: false
         },
         {
             id: 2,
             name: 'chiken',
             customer: 'заказчик доволен',
-            filling: 'с рыбой',
+            filling: 'с курой',
             portion: '100 порций',
             prize: '5 мышей в подарок',
             weight: '5',
             toggle: false,
-            signature: `Печалька, с курой закончился.`,
-            link: ''
+            signature: `Чего сидидшь? порадуй котэ`,
+            link: 'купи.',
+            undertext: 'Фили из цеплят с труфелями в бульоне.',
+            isPresence: true,
+            onMouseOut: false
+
+
         }
     ],
 
@@ -64,6 +79,19 @@ const packetsReducer = (state = initialState, action) => {
                 ...state,
                 packets: updateObjectInArray(state.packets, action.packId, 'id', { toggle: false })
             }
+        case TOGGLE_MOUSEOVER: {
+            debugger
+            return {
+                ...state,
+                packets: updateObjectInArray(state.packets, action.packId, 'id', { onMouseOut: true })
+            }
+        }
+        case TOGGLE_MOUSEOUT: {
+            return {
+                ...state,
+                packets: updateObjectInArray(state.packets, action.packId, 'id', { onMouseOut: false })
+            }
+        }
         default: return state
     }
 }
@@ -73,5 +101,11 @@ export const selectPacket = (packId) => ({
 })
 export const unSelectPacket = (packId) => ({
     type: TOGGLE_UNSELECT, packId
+})
+export const selectHover = (packId) => ({
+    type: TOGGLE_MOUSEOVER, packId
+})
+export const selectHoverTurnOff = (packId) => ({
+    type: TOGGLE_MOUSEOUT, packId
 })
 export default packetsReducer

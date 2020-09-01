@@ -315,10 +315,9 @@ var Packet = function Packet(props) {
       selectPacket = props.selectPacket,
       unSelectPacket = props.unSelectPacket;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: packet.name === 'fuagra' ? 'app__column column fuagra' : packet.name === 'fish' ? 'app__column column fish' : packet.name === 'chiken' ? 'app__column column chiken empty' : null
+    className: "app__column column"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     disabled: packet.name === 'chiken' ? true : false,
-    href: "#",
     onClick: packet.toggle ? function () {
       unSelectPacket(packet.id);
     } : function () {
@@ -329,17 +328,26 @@ var Packet = function Packet(props) {
     className: "column__body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "column__forehead"
-  }, "\u0421\u043A\u0430\u0437\u043E\u0447\u043D\u043E\u0435 \u0437\u0430\u043C\u043E\u0440\u0441\u043A\u043E\u0435 \u044F\u0441\u0442\u0432\u043E"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u041A\u043E\u0442\u044D \u043D\u0435 \u043E\u0434\u043E\u0431\u0440\u044F\u0435\u0442?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u0421\u043A\u0430\u0437\u043E\u0447\u043D\u043E\u0435 \u0437\u0430\u043C\u043E\u0440\u0441\u043A\u043E\u0435 \u044F\u0441\u0442\u0432\u043E")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "column__title "
   }, "\u041D\u044F\u043C\u0443\u0448\u043A\u0430", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, packet.filling)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column__text"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, packet.portion), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, packet.prize), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, packet.customer)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column__weight"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, packet.weight), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u043A\u0433")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "column__undertext"
-  }, packet.signature, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
-  }, packet.link)));
+    className: "column__undertext undertext"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "undertext__underTextDefault"
+  }, packet.signature, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: packet.toggle ? function () {
+      unSelectPacket(packet.id);
+    } : function () {
+      selectPacket(packet.id);
+    },
+    className: packet.toggle ? ' select' : null
+  }, packet.link)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "undertext__selected"
+  }, packet.undertext)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Packet);
@@ -445,7 +453,8 @@ var initialState = {
     weight: '2',
     toggle: false,
     signature: "\u0427\u0435\u0433\u043E \u0441\u0438\u0434\u0438\u0434\u0448\u044C? \u043F\u043E\u0440\u0430\u0434\u0443\u0439 \u043A\u043E\u0442\u044D",
-    link: 'купи.'
+    link: 'купи.',
+    undertext: 'Печень утки разварная с артишоками.'
   }, {
     id: 1,
     name: 'fuagra',
@@ -455,19 +464,21 @@ var initialState = {
     prize: 'мышь в подарок',
     weight: '0.5',
     toggle: false,
-    signature: "\u0413\u043E\u043B\u043E\u0432\u044B \u0449\u0443\u0447\u044C\u0438 \u0441 \u0447\u0435\u0441\u043D\u043E\u043A\u043E\u043C \u0434\u0430 \u0441\u0432\u0435\u0436\u0430\u0439\u0448\u0430\u044F \u0441\u0451\u043C\u0433\u0443\u0448\u043A\u0430.",
-    link: ''
+    signature: "\u0427\u0435\u0433\u043E \u0441\u0438\u0434\u0438\u0434\u0448\u044C? \u043F\u043E\u0440\u0430\u0434\u0443\u0439 \u043A\u043E\u0442\u044D",
+    link: 'купи.',
+    undertext: 'Головы щучьи с чесноком да свежайшая сёмгушка.'
   }, {
     id: 2,
     name: 'chiken',
     customer: 'заказчик доволен',
-    filling: 'с рыбой',
+    filling: 'с курой',
     portion: '100 порций',
     prize: '5 мышей в подарок',
     weight: '5',
     toggle: false,
-    signature: "\u041F\u0435\u0447\u0430\u043B\u044C\u043A\u0430, \u0441 \u043A\u0443\u0440\u043E\u0439 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0441\u044F.",
-    link: ''
+    signature: "\u0427\u0435\u0433\u043E \u0441\u0438\u0434\u0438\u0434\u0448\u044C? \u043F\u043E\u0440\u0430\u0434\u0443\u0439 \u043A\u043E\u0442\u044D",
+    link: 'купи.',
+    undertext: 'Фили из цеплят с труфелями в бульоне.'
   }]
 };
 
@@ -637,13 +648,13 @@ function unregister() {
 /***/ }),
 
 /***/ 0:
-/*!********************************************!*\
-  !*** multi @babel/polyfill ./src/index.js ***!
-  \********************************************/
+/*!*******************************************!*\
+  !*** multi babel-polyfill ./src/index.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! @babel/polyfill */"./node_modules/@babel/polyfill/lib/index.js");
+__webpack_require__(/*! babel-polyfill */"./node_modules/babel-polyfill/lib/index.js");
 module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
 
 

@@ -4,7 +4,7 @@ import Packet from './components/Packet';
 
 const App = (props) => {
   let packets = props.packets
-  let packetElement = packets.map(d => <Packet packet={d} selectPacket={props.selectPacket} unSelectPacket={props.unSelectPacket} />);
+  let packetElement = packets.map(d => <Packet packet={d} selectHoverTurnOff={props.selectHoverTurnOff} selectHover={props.selectHover} selectPacket={props.selectPacket} unSelectPacket={props.unSelectPacket} />);
   return (
     <div className="app">
       <div className="app__content">

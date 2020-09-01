@@ -108,6 +108,21 @@
     }
 }
 
+.undertext {
+    &__selected {
+        display: none;
+    }
+
+    &__disabled {
+        height: 13px;
+        text-shadow: 0 1px 0 #000000;
+        color: #ffff66;
+        font-family: "Trebuchet MS";
+        font-size: 13px;
+        display: none;
+    }
+}
+
 .column {
     flex: 0 1 33.333%;
     display: -webkit-box;
@@ -193,13 +208,6 @@
     }
 
 
-
-
-
-
-
-
-
     &__body {
         max-width: 208px;
         margin: auto;
@@ -212,6 +220,46 @@
             padding-top: 12px;
         }
 
+
+    }
+
+    &__forehead {
+        color: #666666;
+        font-family: "Trebuchet MS";
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 15px;
+
+        span {
+            &:first-child {
+                color: #e62e7a;
+                font-family: "Trebuchet MS";
+                font-size: 16px;
+                font-weight: 400;
+                display: none;
+
+
+                @media (max-width: 900px) {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        @media (max-width: 900px) {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+            margin-bottom: 0px;
+        }
 
     }
 
@@ -236,13 +284,7 @@
                 url('./img/sloi2.png') center / 100% 99% no-repeat;
         }
 
-        &.pack2 {
-            background: url('./img/sloi12.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / auto no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
-        }
 
-        &.pack3 {
-            background: url('./img/sloi13.png') center / 100% 100% no-repeat, url('./img/cat3.png') 0 bottom / auto no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
-        }
     }
 
     &__weight {
@@ -290,8 +332,8 @@
         }
 
         @media (max-width: 900px) {
-            width: 51px;
-            height: 51px;
+            width: 60px;
+            height: 60px;
             line-height: 16px;
 
             span {
@@ -313,6 +355,24 @@
         text-shadow: 0 1px 0 #000000;
         font-family: "Trebuchet MS";
         font-size: 13px;
+
+
+
+        button {
+            background-color: rgba(#000000, 0);
+            position: relative;
+            color: #1698d9;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 28px;
+                height: 1px;
+                border: 1px dashed #1698d9;
+                left: 0;
+                bottom: 0;
+            }
+        }
 
         @media (max-width: 1100px) {
             bottom: -7%;
@@ -353,23 +413,7 @@
         }
     }
 
-    &__forehead {
-        color: #666666;
-        font-family: "Trebuchet MS";
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 15px;
 
-        @media (max-width: 900px) {
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        @media (max-width: 768px) {
-            font-size: 12px;
-            margin-bottom: 0px;
-        }
-    }
 
     &__title {
         color: #000000;
@@ -458,86 +502,36 @@
     }
 
 
+
 }
+
+
 
 .select {
-    // transform: translate3D(0px, -20px, -10px);
-    transform: rotate3D(0, -0.1, -0.1, -10deg);
+    &.column {
 
-    @media (max-width: 550px) {
-        transform: rotate3D(0, -0.1, -0.08, -3deg);
-    }
-}
-
-
-.fish {
-    .column {
         &__screen {
-            text-decoration: none;
-            background: url('./img/sloi.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / auto no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
-            transform: rotate(1, 1, 1, 0deg);
-
-            @media (max-width: 900px) {
-                background: url('./img/sloi.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / 100% no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
-
-            }
-
-            &:hover {
-                transform: translate3D(0px, 0px, -5px);
-            }
-        }
-
-        &__forehead,
-        &__text,
-        &__weight {
-            color: #666666;
-        }
-
-        &__undertext {
-            button {
-                background-color: rgba(#000000, 0);
-                position: relative;
-                color: #1698d9;
-                transform: rotate3D(0, 0, 0, 0);
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 28px;
-                    height: 1px;
-                    border: 1px dashed #1698d9;
-                    left: 0;
-                    bottom: 0;
-                }
-            }
-        }
-
-        &__title {
-            color: #000000
-        }
-
-        &__weight {
-            background-color: #1698d9;
-        }
-
-    }
-}
-
-.fuagra {
-    .column {
-        &__screen {
-            text-decoration: none;
             background: url('./img/sloi12.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / auto no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
 
             @media (max-width: 900px) {
                 background: url('./img/sloi12.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / 100% no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
-
             }
 
-            &:hover {
-                transform: translate3D(0px, 0px, -5px);
-            }
+
         }
+    }
+
+    +.undertext {
+        .undertext__selected {
+            display: inline;
+        }
+
+        .undertext__default {
+            display: none;
+        }
+    }
+
+    .column {
 
         &__forehead,
         &__text,
@@ -546,7 +540,7 @@
         }
 
         &__title {
-            color: #000000
+            color: #000000;
         }
 
         &__weight {
@@ -554,28 +548,89 @@
         }
 
     }
+
 }
 
-.chiken {
-    .column {
-        &__undertext {
-            color: #bbbb4b;
-            font-family: "Trebuchet MS";
-            font-size: 13px;
-            font-weight: 400;
+
+.selectHover {
+    &.column {
+
+        &__screen {
+            background: url('./img/sloi12.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / auto no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
 
             @media (max-width: 900px) {
-                font-size: 14px;
+                background: url('./img/sloi12.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / 100% no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
             }
 
-            @media (max-width: 768px) {
-                font-size: 12px;
+            &:hover {
+                background: url('./img/sloi12.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / auto no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
+
+                @media (max-width: 900px) {
+                    background: url('./img/sloi12.png') center / 100% 100% no-repeat, url('./img/cat.png') 0 bottom / 100% no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
+                }
+
+                +.undertext {
+                    .undertext__selected {
+                        text-shadow: 0 1px 0 #000000;
+                        display: inline;
+                    }
+
+                    .undertext__default {
+                        display: none;
+                    }
+                }
+
+
+                .column {
+                    &__weight {
+                        background-color: #e62e7a;
+                    }
+
+                    &__forehead {
+                        span {
+                            &:first-child {
+                                display: inline;
+                            }
+
+                            &:last-child {
+                                display: none;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
+
+    +.undertext {
+        .undertext__selected {
+            display: inline;
+        }
+
+        .undertext__default {
+            display: none;
+        }
+    }
+
+    .column {
+
+        &__forehead,
+        &__text,
+        &__weight {
+            color: #666666;
+        }
+
+        &__title {
+            color: #000000;
+        }
+
+        &__weight {
+            background-color: #d91667;
+        }
+
+    }
+
 }
-
-
 
 
 
@@ -590,8 +645,6 @@
             @media (max-width: 900px) {
                 background: url('./img/sloi13.png') center / 100% 100% no-repeat, url('./img/cat3.png') 0 bottom / 100% no-repeat, url('./img/sloi2.png') center / 100% 99% no-repeat;
             }
-
-
         }
 
         &__forehead,
@@ -618,5 +671,20 @@
             }
         }
 
+
+    }
+
+    .undertext {
+        &__disabled {
+            display: inline;
+        }
+
+        &__default {
+            display: none;
+        }
+
+        &__selected {
+            display: none
+        }
     }
 }
