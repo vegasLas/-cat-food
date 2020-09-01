@@ -7,7 +7,7 @@ const Packet = (props) => {
     }
     return (
         <div className={packet.isPresence ? 'app__column column empty' : "app__column column presence"}>
-            <button onMouseOut={packet.toggle ? () => { selectHover(packet.id) } : null} disabled={(packet.name === 'chiken') ? true : false} onClick={packet.toggle ? () => { toggleSelect(packet.id) } : () => { selectPacket(packet.id) }} className={packet.onMouseOut ? "column__screen selectHover" : packet.toggle ? 'column__screen select' : "column__screen"}>
+            <button onMouseOut={packet.toggle ? () => { selectHover(packet.id) } : null} disabled={packet.isPresence ? true : false} onClick={packet.toggle ? () => { toggleSelect(packet.id) } : () => { selectPacket(packet.id) }} className={packet.onMouseOut ? "column__screen selectHover" : packet.toggle ? 'column__screen select' : "column__screen"}>
                 <div className='column__body'>
                     <p className='column__forehead'>
                         <span>Котэ не одобряет?</span>

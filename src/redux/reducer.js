@@ -23,12 +23,12 @@ let initialState = {
             filling: 'с фуа-гра',
             portion: '10 порций',
             prize: 'мышь в подарок',
-            weight: '0.5',
+            weight: '0,5',
             toggle: false,
             signature: `Чего сидидшь? порадуй котэ`,
             link: 'купи.',
             undertext: 'Печень утки разварная с артишоками.',
-            isPresence: false,
+            isPresence: true,
             onMouseOut: false
 
         },
@@ -44,7 +44,7 @@ let initialState = {
             signature: `Чего сидидшь? порадуй котэ`,
             link: 'купи.',
             undertext: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
-            isPresence: false,
+            isPresence: true,
             onMouseOut: false
         },
         {
