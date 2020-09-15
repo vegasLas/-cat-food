@@ -658,12 +658,7 @@
             background-color: #b3b3b3;
         }
 
-        @media (max-width: 768px) {
-            &__screen {
-                width: 50%;
-                margin: auto
-            }
-        }
+
 
         @media (max-width: 550px) {
             &__screen {
@@ -685,6 +680,23 @@
 
         &__selected {
             display: none
+        }
+    }
+}
+
+.number3 {
+    .column {
+        @media (max-width: 768px) {
+            &__screen {
+                width: 50%;
+                margin: auto
+            }
+        }
+        @media (max-width: 550px) {
+            &__screen {
+                width: 100%;
+                margin: auto
+            }
         }
     }
 }
